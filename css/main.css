@@ -615,11 +615,22 @@ footer span {
   .contact-dates {
     grid-template-columns: 3fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    
   }
   
+  .form-email button {
+    margin-top: 1.2em;
+  }
+
+  .alcaldia-dates {
+    padding-left: 2.5em;
+  }
   .simger-dates {
     grid-column: 1/4;
   }
+.nav-dates ul {
+  text-align: left;
+}
 
 }
 
@@ -638,7 +649,9 @@ footer span {
     max-width: 150px;
   } */
 
-
+.buttom-place:nth-of-type(3) {
+  margin-right: 0;
+}
 
 .menu {
   display: none;
@@ -671,6 +684,18 @@ nav ul {
 }
 
 @media screen and (max-width: 767px){
+
+  .newsletter-image {
+    display: none;
+  }
+
+  .newsletter-container {
+    padding: 1em 1em;
+  }
+
+  .form-email {
+    width: 100%;
+  }
 
 }
 @media screen and (max-width: 480px){
