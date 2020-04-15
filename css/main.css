@@ -318,7 +318,7 @@ li a {
   font-weight: 700;
   color: white;
   font-size: 40px;
-  width: 448px;
+  max-width: 448px;
 }
 
 .description-news {
@@ -336,7 +336,7 @@ li a {
   font-weight: 700;
   color: #044052;
   font-size: 25px;
-  width: 448px;
+  max-width: 448px;
   margin-bottom: 12px;
 
 }
@@ -370,12 +370,13 @@ li a {
   max-width: 1366px;
   margin:0 auto;
   display: grid;
-  grid-template-columns: 1fr auto;
+  /* grid-template-columns: 1fr auto; */
+  grid-template-columns: repeat(auto-fit,minmax(320px,auto));
 }
 
 .description-recomendation {
   align-self: center;
-  width: 83%;
+  max-width: 83%;
 }
 
 .description-recomendation  h2{
@@ -444,7 +445,7 @@ li a {
 }
 
 .form-email {
-  width: 54%;
+  max-width: 54%;
 }
 
 
@@ -538,6 +539,7 @@ footer span {
   grid-template-columns: 1fr auto auto 1fr;
   background-color: #F6F6F6;
   height: auto;
+  
 }
 
 .contact-dates h4 {
@@ -596,6 +598,7 @@ footer span {
 
 .copyright p {
   margin: 0;
+  color: #044052;
 }
 
 .social-links a{
@@ -627,6 +630,9 @@ footer span {
   }
   .simger-dates {
     grid-column: 1/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 .nav-dates ul {
   text-align: left;
@@ -653,9 +659,11 @@ footer span {
   margin-right: 0;
 }
 
-.menu {
+.menu, .logo-gov {
   display: none;
 }
+
+
 
 li a {
   font-size: .8em;
@@ -667,7 +675,7 @@ nav ul {
 }
 
 .last-news-container {
-	grid-template-columns: 1fr;
+	grid-template-columns: 100%;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   height: auto;
 }
@@ -679,15 +687,44 @@ nav ul {
 }
 
 
-@media screen and (max-width: 1155px){
+@media screen and (max-width: 1147px){
 
-}
-
-@media screen and (max-width: 767px){
+  .newsletter {
+    padding: 2em 0;
+  }
+  .newsletter-container {
+    justify-content: center;
+  }
 
   .newsletter-image {
     display: none;
   }
+
+  
+  .form-email {
+    max-width: 80%;
+    /* padding: 0 1.3em; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-email input {
+
+    margin: 0 1em 1em 0;
+
+  }
+
+
+  .description-recomendation h2 {
+    font-size: 2.8em;
+  }
+
+
+
+}
+
+@media screen and (max-width: 767px){
 
   .newsletter-container {
     padding: 1em 1em;
@@ -697,10 +734,104 @@ nav ul {
     width: 100%;
   }
 
+  .description-recomendation h2 {
+    font-size: 2.3em;
+  }
+  .video-container img {
+    width: 100%;
+    margin-top: 2em;
+   
+  }
+
+  .hero h1 {
+    font-size: 3em;
+    
+  }
+
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .form-email input {
+
+    margin: 0 0 1em 0;
+
+  }
+
+  .buttom-place {
+    margin: 0;
+  }
+  
+  .slides-button {
+    width: 100%;
+  }
+  
 }
 @media screen and (max-width: 480px){
+  .last-news-container {
+    grid-template-rows: repeat(4,1fr);
+  }
+  .news:nth-of-type(1) {
+    grid-row: 1 / 3;
+  }
+
+  .description-news-p h2 {
+    
+    font-size: 2em;
+  }
+
+  .description-news-p h5 {
+    font-size: 1em;
+  }
+
+  .form-email h2 {
+    font-size: 1.8em;
+  }
+
+  .contact-dates {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+  }
+  
+  .alcaldia-dates, .simger-dates, .nav-dates {
+    
+    padding: 2.5em;
+  }
+  .simger-dates {
+    grid-column: 1/2;
+  }
+
+  .item {
+    display: block;
+    margin: 0 0 1.8em;
+  }
+
+  .event-dates .date {
+    padding: 0;
+    border: none
+  }
+
+  .hero-container button {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
 
 }
-@media screen and (max-width: 320px){
 
+
+@media screen and (max-width: 414px){
+  .hero h1 {
+    font-size: 1.7em;
+  }
+}
+@media screen and (max-width: 320px){
+  
+  .hero h1 {
+    font-size: 1.4em;
 }
